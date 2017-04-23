@@ -46,27 +46,29 @@ function showError(error) {
 
 //get weather data
 function getWeather(latitude, longitude) {
-    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&APPID=438a542b168299975bc97da70d9a1817&units=metric"
 
-    var xhttp = new XMLHttpRequest();
-    //xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=toronto,ca&APPID=438a542b168299975bc97da70d9a1817&units=metric", true);
-    xhttp.open("GET", url, true);
+    //var url = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&APPID=438a542b168299975bc97da70d9a1817&units=metric"
+    var url = "https://api.darksky.net/forecast/c46581f326fecee15bcaa599c2aa04bf/"+latitude+","+longitude+"?units=si"
     
-    xhttp.onload = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            data = JSON.parse(this.responseText);
+    $.ajax({
+        xhrFields: {cors: false},
+        type: "GET",
+        url: url,
+        dataType: "jsonp",
+        async: true,
+        success: function(data) {
+            console.log(data);
             updateWeather(data);
         }
-    };
-    xhttp.send();
+    });
     
     console.log(url);
 }
 
 //update weather data 
 function updateWeather(data) {
-    temp = Math.round(data["main"]["temp"]);
-    loc = data["name"];
+    temp = Math.round(data["currently"]["temperature"]);
+    loc = data["timezone"].substring(data["timezone"].indexOf("/")+1);
 
     $("#weatherLoc")[0].innerHTML = loc;
     $("#weatherTemp")[0].innerHTML = temp+"&deg;C";
