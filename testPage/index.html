@@ -3,6 +3,8 @@
 <head>
 <title>Test Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="script.js"></script>
 <link rel="stylesheet" href="../styles/w3.css">
 </head>
 
@@ -12,19 +14,54 @@
 </div>
 
 <div class="w3-container">
-    <div class="w3-panel w3-teal w3-hover-blue w3-card-4">
+    <div class="w3-panel w3-teal w3-card-4 w3-leftbar w3-border-green">
         <p>This is the test page</p>
     </div>
     
 </div>
 
-<div class="w3-container">
-    <div class="w3-panel w3-red w3-display-container">
+<div id="alert" class="w3-container" style="display:none">  
+    <div id="panel" class="w3-panel w3-red w3-display-container">
       <span onclick="this.parentElement.style.display='none'"
       class="w3-button w3-red w3-large w3-display-topright">x</span>
       <p>Click on the X to close this panel.</p>
     </div>
 </div>
+
+<div id="weather" class="w3-card-4 w3-margin" style="width:50%">
+  <div class="w3-display-container w3-text-white">
+    <img src="images/toronto.jpg" alt="Toronto" style="width:100%">
+    <div id="weatherLoc" class="w3-xlarge w3-display-topleft w3-padding w3-panel w3-teal">-</div>
+    <div id="weatherTemp" class="w3-xlarge w3-display-bottomleft w3-padding w3-panel w3-teal">-</div>
+  </div>
+  <div class="w3-row">
+    <div class="w3-third w3-center">
+      <h3>MON</h3>
+      <img src="img_weather_sun.jpg" alt="sun">
+    </div>
+    <div class="w3-third w3-center">
+      <h3>TUE</h3>
+      <img src="img_weather_cloud.jpg" alt="cloud">
+    </div>
+    <div class="w3-third w3-center w3-margin-bottom">
+      <h3>WED</h3>
+      <img src="img_weather_clouds.jpg" alt="clouds">
+    </div>
+  </div>
+</div>
+
+<div class="w3-container">
+    <button class="w3-button w3-red" onclick="document.getElementById('id01').style.display='block'">Show Panel</button> 
+
+    <div id="id01" class="w3-panel w3-green w3-display-container" style="display:none">
+        <span onclick="this.parentElement.style.display='none'"
+        class="w3-button w3-red w3-display-topright">x</span>
+        <p>Click on the X to close this panel.</p>
+        <p>Click on the X to close this panel.</p>
+    </div>
+</div>
+
+<br>
 
 <div class="w3-container">
     <a href="../index.html">Back to Home</a>
