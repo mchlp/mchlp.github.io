@@ -1,6 +1,10 @@
 //data for weather
 var position;
 
+//days of the week
+var weekdays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+var today = new Date();
+
 //when document is ready
 $(document).ready(pageReady);
 
@@ -74,8 +78,23 @@ function updateWeather(data) {
     $("#weatherTemp")[0].innerText = temp+"°C";
     $("#weatherLoc")[0].innerText = loc;
     
-    var image;
     console.log(type);
+    $("#weatherImage").attr("src", "images/"+getWeatherImage(type));
+    $("#weatherImage").attr("alt", type);
+    
+    for (var i=1; i<=3; i++) {
+        var day = (today.getDay()+i)%7;
+        var dayName = weekdays[day];
+        $("#weatherDay"+i+"Title")[0].innerHTML = dayName;
+        var dayType = data["daily"]["data"][i]["icon"];
+        $("#weatherDay"+i+"Image").attr("src", "images/"+getWeatherImage(dayType));
+        $("#weatherDay"+i+"Image").attr("alt", dayType);
+    }
+}
+
+//get weather image by weather type
+function getWeatherImage(type) {
+    var image;
     switch(type) {
         case "clear-day":
         case "clear-night":
@@ -101,6 +120,5 @@ function updateWeather(data) {
             image = "question.png";
             break;
     }
-    
-    $("#weatherImage").attr("src", "images/"+image);
+    return image;
 }
