@@ -11,7 +11,19 @@ $(document).ready(pageReady);
 //page ready
 function pageReady() {
     getLocation();
+    $(window).scroll(pageScroll);
 } 
+
+//page scroll
+function pageScroll() {
+    console.log($(window).scrollTop())
+    if ($(window).scrollTop() > 0) {
+        $('#navBar').addClass("nav-bar-fixed");
+    }
+    else {
+        $('#navBar').removeClass("nav-bar-fixed");
+    }
+}
 
 //get location
 function getLocation() {
