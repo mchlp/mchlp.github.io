@@ -27,7 +27,8 @@ function buttonClicked() {
             window.open("../BusPredictionsWebpage", "_self");
             break;
         case "#searchGoButton":
-            console.log("searched for: " + $("#searchField").text();
+            console.log("searched for: " + $("#searchField").text());
+            break;
     }       
 }
 
