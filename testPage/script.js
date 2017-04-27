@@ -24,7 +24,7 @@ function buttonClicked() {
     
     switch(buttonID) {
         case "#busPredictorPage":
-            window.open("../BusPredictionsWebpage");
+            window.open("../BusPredictionsWebpage", "_self");
     }       
 }
 
