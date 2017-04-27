@@ -10,13 +10,26 @@ $(document).ready(pageReady);
 
 //page ready
 function pageReady() {
+    //button press
+    $("button").click(buttonClicked);
+    
     getLocation();
     $(window).scroll(pageScroll);
 } 
 
+//button clicked 
+function buttonClicked() {
+    var buttonID = this.id;
+    console.log(buttonID + "button clicked");
+    
+    switch(buttonID) {
+        case "#busPredictorPage":
+            window.open("../BusPredictionsWebpage");
+    }       
+}
+
 //page scroll
 function pageScroll() {
-    console.log($(window).scrollTop())
     if ($(window).scrollTop() > 0) {
         $('#navBar').addClass("nav-bar-fixed");
     }
