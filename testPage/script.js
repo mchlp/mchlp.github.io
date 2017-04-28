@@ -23,10 +23,10 @@ function buttonClicked() {
     console.log(buttonID + "button clicked");
     
     switch(buttonID) {
-        case "#busPredictorPage":
+        case "busPredictorPage":
             window.open("../BusPredictionsWebpage", "_self");
-        case "#searchGoButton":
-            console.log("searched for: " + $("searchField").val());
+        case "searchGoButton":
+            console.log("searched for: " + $("#searchField").val());
             break;
     }       
 }
