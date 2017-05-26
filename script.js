@@ -12,23 +12,27 @@ $(document).ready(pageReady);
 function pageReady() {
     //button press
     $("button").click(buttonClicked);
-    
+
     getLocation();
     $(window).scroll(pageScroll);
-} 
+}
 
-//button clicked 
+//button clicked
 function buttonClicked() {
     var buttonID = this.id;
     console.log(buttonID + "button clicked");
-    
+
     switch(buttonID) {
         case "busPredictorPage":
             window.open("../BusPredictionsWebpage", "_self");
+            break;
+        case "CulminatingTGJ2O":
+            window.open("../CulminatingTGJ2O", "_self");
+            break;
         case "searchGoButton":
             console.log("searched for: " + $("#searchField").val());
             break;
-    }       
+    }
 }
 
 //page scroll
@@ -81,7 +85,7 @@ function getWeather(latitude, longitude) {
 
     //var url = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&APPID=438a542b168299975bc97da70d9a1817&units=metric"
     var url = "https://api.darksky.net/forecast/c46581f326fecee15bcaa599c2aa04bf/"+latitude+","+longitude+"?units=si"
-    
+
     $.ajax({
         xhrFields: {cors: false},
         type: "GET",
@@ -93,23 +97,23 @@ function getWeather(latitude, longitude) {
             updateWeather(data);
         }
     });
-    
+
     console.log(url);
 }
 
-//update weather data 
+//update weather data
 function updateWeather(data) {
     var temp = Math.round(data["currently"]["temperature"]);
     var loc = data["timezone"].substring(data["timezone"].indexOf("/")+1).replace("_", " ");
     var type = data["currently"]["icon"];
-    
+
     $("#weatherTemp")[0].innerText = temp+"°C";
     $("#weatherLoc")[0].innerText = loc;
-    
+
     console.log(type);
     $("#weatherImage").attr("src", "images/"+getWeatherImage(type));
     $("#weatherImage").attr("alt", type);
-    
+
     for (var i=1; i<=3; i++) {
         var day = (today.getDay()+i)%7;
         var dayName = weekdays[day];
