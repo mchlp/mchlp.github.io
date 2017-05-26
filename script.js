@@ -20,15 +20,13 @@ function pageReady() {
 //button clicked
 function buttonClicked() {
     var buttonID = this.id;
-    console.log(buttonID + "button clicked");
+    console.log(buttonID + " button clicked");
 
     switch(buttonID) {
         case "busPredictorPage":
             window.open("../BusPredictionsWebpage", "_self");
-            break;
         case "CulminatingTGJ2O":
             window.open("../CulminatingTGJ2O", "_self");
-            break;
         case "searchGoButton":
             console.log("searched for: " + $("#searchField").val());
             break;
