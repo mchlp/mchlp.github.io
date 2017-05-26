@@ -25,8 +25,10 @@ function buttonClicked() {
     switch(buttonID) {
         case "busPredictorPage":
             window.open("../BusPredictionsWebpage", "_self");
+            break;
         case "CulminatingTGJ2O":
             window.open("../CulminatingTGJ2O", "_self");
+            break;
         case "searchGoButton":
             console.log("searched for: " + $("#searchField").val());
             break;
