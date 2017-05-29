@@ -30,7 +30,7 @@ function buttonClicked() {
             window.open("/CulminatingTGJ2O", "_self");
             break;
         case "CulminatingCHC2D6":
-            window.open("/CulminatingCHC2D6", "_self");
+            window.open("/errorPages/culminatingTGJ2Odown.html", "_self");
         case "searchGoButton":
             console.log("searched for: " + $("#searchField").val());
             break;
