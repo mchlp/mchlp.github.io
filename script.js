@@ -27,10 +27,10 @@ function buttonClicked() {
             window.open("/BusPredictionsWebpage", "_self");
             break;
         case "CulminatingTGJ2O":
-            window.open("/CulminatingTGJ2O", "_self");
+            window.open("/errorPages/maintenance.html", "_self");
             break;
         case "CulminatingCHC2D6":
-            window.open("/errorPages/culminatingTGJ2Odown.html", "_self");
+            window.open("/errorPages/maintenance.html", "_self");
         case "searchGoButton":
             console.log("searched for: " + $("#searchField").val());
             break;
