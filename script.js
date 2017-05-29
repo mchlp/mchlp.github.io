@@ -24,11 +24,13 @@ function buttonClicked() {
 
     switch(buttonID) {
         case "busPredictorPage":
-            window.open("../BusPredictionsWebpage", "_self");
+            window.open("/BusPredictionsWebpage", "_self");
             break;
         case "CulminatingTGJ2O":
-            window.open("../CulminatingTGJ2O", "_self");
+            window.open("/CulminatingTGJ2O", "_self");
             break;
+        case "CulminatingCHC2D6":
+            window.open("/CulminatingCHC2D6", "_self");
         case "searchGoButton":
             console.log("searched for: " + $("#searchField").val());
             break;
