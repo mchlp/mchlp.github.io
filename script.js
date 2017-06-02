@@ -27,7 +27,7 @@ function buttonClicked() {
             window.open("/BusPredictionsWebpage", "_self");
             break;
         case "CulminatingTGJ2O":
-            window.open("/errorPages/maintenance.html", "_self");
+            window.open("/CulminatingTGJ2O", "_self");
             break;
         case "CulminatingCHC2D6":
             window.open("/errorPages/maintenance.html", "_self");
