@@ -12,9 +12,23 @@ $(document).ready(pageReady);
 function pageReady() {
     //button press
     $("button").click(buttonClicked);
-
+    checkHost();
     getLocation();
     $(window).scroll(pageScroll);
+}
+
+//check web host
+function checkHost() {
+    domain = window.location.hostname;
+    if (domain == "mchlp.github.io") {
+        $("#content").html(`
+        <div class="w3-container">
+            <div class="w3-panel w3-teal w3-hover-shadow w3-leftbar w3-border-green">
+                <p>This page has been moved to <a href="http://mchlp.tk">mchlp.tk</a>.</p>
+                <p>You will be redirected to this page shortly.</p>
+            </div>
+        </div>"`)
+    }
 }
 
 //button clicked
@@ -22,7 +36,7 @@ function buttonClicked() {
     var buttonID = this.id;
     console.log(buttonID + " button clicked");
 
-    switch(buttonID) {
+    switch (buttonID) {
         case "busPredictorPage":
             window.open("/BusPredictionsWebpage", "_self");
             break;
@@ -41,8 +55,7 @@ function buttonClicked() {
 function pageScroll() {
     if ($(window).scrollTop() > 0) {
         $('#navBar').addClass("nav-bar-fixed");
-    }
-    else {
+    } else {
         $('#navBar').removeClass("nav-bar-fixed");
     }
 }
@@ -62,9 +75,9 @@ function showPosition(loc) {
 }
 
 function showError(error) {
-    switch(error.code) {
+    switch (error.code) {
         case 0:
-            $("#alert").find("p")[0].innerText= "Geolocation is not supported by this browser.";
+            $("#alert").find("p")[0].innerText = "Geolocation is not supported by this browser.";
         case error.PERMISSION_DENIED:
             $("#alert").find("p")[0].innerText = "User denied the request for Geolocation."
             break;
@@ -78,7 +91,7 @@ function showError(error) {
             $("#alert").find("p")[0].innerText = "An unknown error occurred."
             break;
     }
-    $("#alert")[0].style.display="block";
+    $("#alert")[0].style.display = "block";
     getWeather(43.7, -79.42);
 }
 
@@ -86,10 +99,12 @@ function showError(error) {
 function getWeather(latitude, longitude) {
 
     //var url = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&APPID=438a542b168299975bc97da70d9a1817&units=metric"
-    var url = "https://api.darksky.net/forecast/c46581f326fecee15bcaa599c2aa04bf/"+latitude+","+longitude+"?units=si"
+    var url = "https://api.darksky.net/forecast/c46581f326fecee15bcaa599c2aa04bf/" + latitude + "," + longitude + "?units=si"
 
     $.ajax({
-        xhrFields: {cors: false},
+        xhrFields: {
+            cors: false
+        },
         type: "GET",
         url: url,
         dataType: "jsonp",
@@ -106,30 +121,30 @@ function getWeather(latitude, longitude) {
 //update weather data
 function updateWeather(data) {
     var temp = Math.round(data["currently"]["temperature"]);
-    var loc = data["timezone"].substring(data["timezone"].indexOf("/")+1).replace("_", " ");
+    var loc = data["timezone"].substring(data["timezone"].indexOf("/") + 1).replace("_", " ");
     var type = data["currently"]["icon"];
 
-    $("#weatherTemp")[0].innerText = temp+"°C";
+    $("#weatherTemp")[0].innerText = temp + "°C";
     $("#weatherLoc")[0].innerText = loc;
 
     console.log(type);
-    $("#weatherImage").attr("src", "images/"+getWeatherImage(type));
+    $("#weatherImage").attr("src", "images/" + getWeatherImage(type));
     $("#weatherImage").attr("alt", type);
 
-    for (var i=1; i<=3; i++) {
-        var day = (today.getDay()+i)%7;
+    for (var i = 1; i <= 3; i++) {
+        var day = (today.getDay() + i) % 7;
         var dayName = weekdays[day];
-        $("#weatherDay"+i+"Title")[0].innerHTML = dayName;
+        $("#weatherDay" + i + "Title")[0].innerHTML = dayName;
         var dayType = data["daily"]["data"][i]["icon"];
-        $("#weatherDay"+i+"Image").attr("src", "images/"+getWeatherImage(dayType));
-        $("#weatherDay"+i+"Image").attr("alt", dayType);
+        $("#weatherDay" + i + "Image").attr("src", "images/" + getWeatherImage(dayType));
+        $("#weatherDay" + i + "Image").attr("alt", dayType);
     }
 }
 
 //get weather image by weather type
 function getWeatherImage(type) {
     var image;
-    switch(type) {
+    switch (type) {
         case "clear-day":
         case "clear-night":
             image = "sunny.png";
