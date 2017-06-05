@@ -21,14 +21,19 @@ function pageReady() {
 function checkHost() {
     domain = window.location.hostname;
     if (domain == "mchlp.github.io") {
+        console.log("asdkfjlasdf")
         $("#content").html(`
         <div class="w3-container">
-            <div class="w3-panel w3-teal w3-hover-shadow w3-leftbar w3-border-green">
+            <div class="w3-panel w3-pale-red w3-hover-shadow w3-leftbar w3-border-red">
                 <p>This page has been moved to <a href="http://mchlp.tk">mchlp.tk</a>.</p>
-                <p>You will be redirected to this page shortly.</p>
+                <p>You will be redirected there shortly.</p>
             </div>
-        </div>"`)
+        </div>`)
+        setTimeout(function() {
+            window.open("http://mchlp.tk", "_self");
+        }, 3000);
     }
+
 }
 
 //button clicked
