@@ -13,7 +13,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "npm run build && npm run pages-deploy",
-    "pages-deploy": "NODE_DEBUG=gh-pages gh-pages -d build"
+    "pages-deploy": "NODE_DEBUG=gh-pages gh-pages -d build -b master"
   },
   "eslintConfig": {
     "extends": "react-app"
