@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import Navbar from '../Components/Navbar';
-import About from '../Components/About';
-import Intro from '../Components/Intro';
+import About from '../Components/About/About';
+import Intro from '../Components/Intro/Intro';
+import PageTemplate from './PageTemplate';
 
 export default class Homepage extends Component {
     render() {
         return (
-            <div>
-                <Navbar />
+            <PageTemplate>
                 <Intro />
                 <About />
-            </div>
+            </PageTemplate>
         );
     }
 }

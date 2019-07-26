@@ -1,0 +1,8 @@
+.nav {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    padding-bottom: 30px;
+    background: linear-gradient(to bottom, #d2ff6b80 0%, #d2ff6b50 75%, #d2ff6b00 100%);
+}
