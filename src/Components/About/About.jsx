@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialMediadIcon from '../SocialMediaIcon';
+import SocialMediadIcon from './SocialMediaIcon';
 import githubLogo from '../../Assets/github.svg';
 import linkedinLogo from '../../Assets/linkedin.png';
 import devpostLogo from '../../Assets/devpost.png';

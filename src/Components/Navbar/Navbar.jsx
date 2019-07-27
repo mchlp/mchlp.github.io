@@ -6,7 +6,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <div>
-                <nav className={'navbar navbar-expand-lg navbar-light ' + styles.nav}>
+                <nav className={'shadow navbar navbar-expand-lg navbar-light ' + styles.nav}>
                     <Link to='/'>
                         <div className="navbar-brand">Michael Pu</div>
                     </Link>

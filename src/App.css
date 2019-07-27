@@ -13,3 +13,8 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.full {
+    min-height: 100vh;
+    padding-top: 90px;
+}
