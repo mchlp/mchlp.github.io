@@ -6,8 +6,8 @@ import devpostLogo from '../Assets/devpost.png';
 import resume from '../Assets/resume.pdf';
 
 const message = `
-Hi! My name is Michael and I'll be attending the University of Waterloo 
-next year for Software Engineering. I've been to a few hackathons and 
+Hi! My name is Michael and I am currently attending the University of Waterloo 
+for Software Engineering. I've been to a few hackathons and 
 participated a number of competitive programming competitions.
 ---
 I started programming in grade nine using Python before taking interest 
@@ -15,7 +15,7 @@ in competitive programming. From then on, I've worked with numerous
 programming languages and frameworks.
 
 ---
-Currently, I've been focusing on web developement using React and machine 
+Currently, I've been focusing on web development using React and machine 
 learning using TensorFlow.
 `;
 
