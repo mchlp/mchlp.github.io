@@ -14,7 +14,7 @@ export default function Intro() {
                 <h1>Hello! I&apos;m</h1>
                 <h1 style={{ fontSize: 80 }}>Michael Pu</h1>
                 <br />
-                <h3>Incoming Software Engineering Student at the University of Waterloo</h3>
+                <h3>1B Software Engineering Student at the University of Waterloo</h3>
             </div>
         </div>
     );
