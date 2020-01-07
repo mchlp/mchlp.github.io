@@ -13,11 +13,46 @@ participated a number of competitive programming competitions.
 I started programming in grade nine using Python before taking interest 
 in competitive programming. From then on, I've worked with numerous 
 programming languages and frameworks.
-
----
-Currently, I've been focusing on web development using React and machine 
-learning using TensorFlow.
 `;
+
+const intermediateLang = ['C', 'C++', 'Java', 'Python', 'JavaScript'];
+const basicLang = ['PHP', 'SQL',];
+const frameworksTools = ['Git', 'Node.js', 'Linux', 'React', 'MongoDB', 'NginX', 'JavaFX', 'Docker'];
+
+const langSection = (
+    <div className='card mb-3 lang-card'>
+        <div className='card-body'>
+            <div style={{ fontSize: 16 }}>
+                <div>
+                    <span className='font-weight-bold'>Intermediate Knowledge: </span>
+                    {
+                        intermediateLang.map((lang, index) => (
+                            <span key={index}>{(index != 0 ? ', ' : '') + (lang)}</span>
+                        ))
+                    }
+                </div>
+                <br />
+                <div>
+                    <span className='font-weight-bold'>Basic Knowledge: </span>
+                    {
+                        basicLang.map((lang, index) => (
+                            <span key={index}>{(index != 0 ? ', ' : '') + (lang)}</span>
+                        ))
+                    }
+                </div>
+                <br />
+                <div>
+                    <span className='font-weight-bold'>Frameworks/Tools: </span>
+                    {
+                        frameworksTools.map((lang, index) => (
+                            <span key={index}>{(index != 0 ? ', ' : '') + (lang)}</span>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div >
+);
 
 export default function About() {
     return (
@@ -46,7 +81,8 @@ export default function About() {
                             <p key={index} style={{ fontSize: 20 }}>{value}</p>
                         );
                     })}
-                    <p style={{ fontSize: 20 }}> Feel free to shoot me an email at <a href='mailto:michael.pu123@gmail.com'>michael.pu123@gmail.com</a> or check out my resume <a href={resume}>here!</a></p>
+                    {langSection}
+                    <p style={{ fontSize: 20 }}>Check out the projects I've been working on <a href='https://github.com/mchlp'>here</a> or my resume <a href={resume}>here!</a></p>
                 </div>
             </div>
         </div>

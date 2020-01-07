@@ -13,7 +13,7 @@ export default function Projects() {
             <div className='m-5'>
                 <h1>Projects</h1>
                 <div>
-                    Here's a list of recent projects I've been working on.
+                    Here`&apos`s a list of recent projects I`&apos`ve been working on.
                     To be completed...
                 </div>
             </div>
