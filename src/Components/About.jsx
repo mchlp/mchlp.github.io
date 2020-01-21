@@ -15,7 +15,7 @@ in competitive programming. From then on, I've worked with numerous
 programming languages and frameworks.
 `;
 
-const intermediateLang = ['C', 'C++', 'Java', 'Python', 'JavaScript'];
+const intermediateLang = ['JavaScript', 'Java', 'Python', 'C', 'C++', 'SQL', 'HTML', 'CSS', 'Bash'];
 const basicLang = ['PHP', 'SQL',];
 const frameworksTools = ['Git', 'Node.js', 'Linux', 'React', 'MongoDB', 'NginX', 'JavaFX', 'Docker'];
 
@@ -27,7 +27,7 @@ const langSection = (
                     <span className='font-weight-bold'>Intermediate Knowledge: </span>
                     {
                         intermediateLang.map((lang, index) => (
-                            <span key={index}>{(index != 0 ? ', ' : '') + (lang)}</span>
+                            <span key={index}>{(index !== 0 ? ', ' : '') + (lang)}</span>
                         ))
                     }
                 </div>
@@ -36,7 +36,7 @@ const langSection = (
                     <span className='font-weight-bold'>Basic Knowledge: </span>
                     {
                         basicLang.map((lang, index) => (
-                            <span key={index}>{(index != 0 ? ', ' : '') + (lang)}</span>
+                            <span key={index}>{(index !== 0 ? ', ' : '') + (lang)}</span>
                         ))
                     }
                 </div>
@@ -45,7 +45,7 @@ const langSection = (
                     <span className='font-weight-bold'>Frameworks/Tools: </span>
                     {
                         frameworksTools.map((lang, index) => (
-                            <span key={index}>{(index != 0 ? ', ' : '') + (lang)}</span>
+                            <span key={index}>{(index !== 0 ? ', ' : '') + (lang)}</span>
                         ))
                     }
                 </div>
@@ -82,7 +82,7 @@ export default function About() {
                         );
                     })}
                     {langSection}
-                    <p style={{ fontSize: 20 }}>Check out the projects I've been working on <a href='https://github.com/mchlp'>here</a> or my resume <a href={resume}>here!</a></p>
+                    <p style={{ fontSize: 20 }}>Check out the projects I've been working on <a href='https://github.com/mchlp'>here</a>.</p>
                 </div>
             </div>
         </div>
