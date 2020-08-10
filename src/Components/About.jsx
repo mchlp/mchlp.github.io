@@ -3,7 +3,6 @@ import SocialMediadIcon from '../Components/SocialMediaIcon';
 import githubLogo from '../Assets/github.svg';
 import linkedinLogo from '../Assets/linkedin.png';
 import devpostLogo from '../Assets/devpost.png';
-import resume from '../Assets/resume.pdf';
 
 const message = `
 Hi! My name is Michael and I am currently attending the University of Waterloo 
