@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialMediadIcon from '../Components/SocialMediaIcon';
+import SocialMediaIcon from '../Components/SocialMediaIcon';
 import githubLogo from '../Assets/github.svg';
 import linkedinLogo from '../Assets/linkedin.png';
 import devpostLogo from '../Assets/devpost.png';
@@ -70,9 +70,9 @@ export default function About() {
                     justifyContent: 'center',
 
                 }}>
-                    <SocialMediadIcon link='https://github.com/mchlp' src={githubLogo} alt='GitHub' />
-                    <SocialMediadIcon link='https://www.linkedin.com/in/michael-pu/' src={linkedinLogo} alt='LinkedIn' />
-                    <SocialMediadIcon link='https://devpost.com/mchlp' src={devpostLogo} alt='Devpost' />
+                    <SocialMediaIcon link='https://github.com/mchlp' src={githubLogo} alt='GitHub' />
+                    <SocialMediaIcon link='https://www.linkedin.com/in/michael-pu/' src={linkedinLogo} alt='LinkedIn' />
+                    <SocialMediaIcon link='https://devpost.com/mchlp' src={devpostLogo} alt='Devpost' />
                 </div>
                 <div className='text-left container'>
                     {message.split('---').map((value, index) => {

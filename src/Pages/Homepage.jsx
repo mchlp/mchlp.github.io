@@ -5,12 +5,13 @@ import Intro from '../Components/Intro';
 
 export default class Homepage extends Component {
     render() {
-        return (
-            <div>
-                <Navbar />
-                <Intro />
-                <About />
-            </div>
-        );
+        return <Intro />;
+        // return (
+        //     <div>
+        //         <Navbar />
+        //         <Intro />
+        //         <About />
+        //     </div>
+        // );
     }
 }
